@@ -1,0 +1,850 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    background-color: black;
+}
+
+#main_block{
+    -webkit-animation: fadein 2.5s;
+    -moz-animation: fadein 2.5s;
+    -o-animation: fadein 2.5s;
+    -ms-animation: fadein 2.5s;
+}
+
+body{
+    object-fit: fill;
+    background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75) ), url('wall_pattern.jpg');
+    color: white;
+}
+
+#body_index{ /*IMPORTANT, fixed height to show full body content*/
+    height: 1300px;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#doubt{
+    display: inline-block;
+    position: absolute;
+    
+    margin-top: -30%;
+    margin-left: 5%;
+    width: 20%;
+    border-radius: 200px;
+    filter: brightness(0.9);
+}
+
+#overwhelmed{
+    display: inline-block;
+    position: absolute;
+    
+    width: 30%;
+    
+    margin-top: -14%;
+    margin-left: 1%;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px white, -1px -1px 2px white;/* 0 2px 2px black, 0 -2px 2px black;*/
+    color: black;
+    font-size: 1.4em;
+    font-weight: bolder;
+    font-style: oblique;
+    text-align: center;
+    
+    
+}
+
+#wrapper1{
+    position: relative;
+    display: block;
+    
+    margin-top: 2%;
+    height: 450px;
+    width: 875px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    overflow: hidden;
+}
+
+#display1, #display2{
+    position: relative;
+    object-fit: fill;
+    
+    height: 450px;
+    width: 875px;
+    
+    /*800px;*/
+    /*425px;*/
+}
+
+/*button_pannel{
+    position: relative;
+    display: inline-flex;
+}*/
+
+#previous, #previous2{
+    position: absolute;
+    margin-top: 22%;
+    margin-left: 2%;
+    
+    font-weight: bold;
+    font-size: 1.95em;
+    background-color: azure;
+    width: 50px;
+    border-radius: 22px;
+    box-shadow: 3px 3px 5px black;
+    
+    z-index: 3;
+}
+
+#next, #next2{
+    position: absolute;
+    margin-top: 22%;
+    margin-left: 91%;
+    
+    font-weight: bold;
+    font-size: 1.95em;
+    background-color: azure;
+    width: 50px;
+    border-radius: 22px;
+    box-shadow: 3px 3px 5px black;
+    
+    z-index: 3;
+}
+
+#stamp{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+#company_card{
+    margin-left: 20px;
+}
+
+form{
+    margin-top: 1%;
+    font-size: 1.4em;
+}
+
+span{
+    position: absolute;
+    display:inline-block;
+    
+    margin-left: 0.5%;
+}
+
+input, textarea{
+    position: absolute;
+    display: block;
+    
+    font-size: 0.9em;
+    margin-left: 250px;
+}
+
+.cell{
+    border-top: 1px solid silver;
+    width: 320px;
+}
+
+#comment{
+    height: 80px;
+}
+
+/*#iframe{
+    display: inline-block;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 20%;
+    visibility: hidden;
+}*/
+
+#gynza1{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+#gynza2{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+#gynza_title{
+    display: inline-block;
+    position: absolute;
+    object-fit: fill;
+    
+    margin-left: 40%;
+    margin-top: -64%;
+    
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.85em;
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+#gynza_title:hover{
+    color: #ff8cb2;
+    text-shadow: 1px 0 6px #ff0083, -1px 0 6px #ff0083, 0 1px 6px #ff0083, 0 -1px 6px #ff0083;/*, 1px 1px #ff0083, -1px -1px 0 #ff0083, 1px -1px 0 #ff0083, -1px 1px 0 #ff0083;*/
+}
+
+#gynza_subtitle{
+    display: inline-block;
+    position: absolute;
+    
+    margin-left: 46%;
+    margin-top: -24%;
+    
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 1.9em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+#sellingjapan_index{ /*BLOCK*/
+    /*position: static;*/
+    display: block;
+    /*float: left;*/
+    width: 65%;
+    
+    margin-left: 11%;
+    margin-top: 38%;
+}
+
+#sellingjapan{
+    display: block;
+    position: static;
+    margin-top: 2%;
+    margin-left: 16%;
+}
+
+
+
+/*article{
+    position: relative;
+}*/
+
+article p{
+    position: absolute;
+    display: inline-block;
+    /*width: 100%;*/
+    margin-left: 20%;
+    margin-top: 30%;
+    font-size: 1.4em;
+    color: white;
+    z-index: 2;
+}
+
+.plain-text{
+    display: inline-block;
+    width: 68%;
+    /*float: left;*/
+    margin-top: 1.5%;
+    margin-left: 10%;
+    margin-right: 20%;
+    font-size: 1.20em;
+    text-align: justify;
+}
+
+/*.caption{
+    visibility: visible;
+    display: inline-block;
+    position: relative;
+    margin-top: 40%;
+    margin-left: 20%;
+    z-index: 2;
+    overflow: hidden;
+    
+}*/
+
+nav{
+    display: inline-block;
+    /*margin-top: 1.5%;*/
+    margin-left: 20.75%;
+    width: 60%;
+    text-align: center;
+
+}
+
+nav a{
+    
+    display: inline-block;
+    font-size: 1.05em;
+    font-family: 'Segoe Script';
+    margin-top: -2%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+}
+
+nav a:hover{
+    display: inline-block;
+    /*background-color: #000033;*/
+    color: #f93407;
+    text-decoration: underline;
+    text-shadow: 1px 1px #eeb40b;
+    /*border-radius: 9px;*/
+}
+
+#banner{
+    display: block;
+    object-fit: fill;
+    margin: 0;
+    padding: 0;
+    /*margin-left: -10px;*/
+    width: 100%;
+    height: 215px;
+}
+
+#web_intro{
+    display: block;
+    background: linear-gradient( rgba(0, 0, 0, 0.55), #595959 98% ), url('bamboo_wall_small.jpg');
+    /*float: left;*/
+    margin-left: 25%;
+    padding-top: .4%;
+    padding-bottom: .4%;
+    width: 70%;
+    font-family: 'Segoe Script';
+    font-weight: bold;
+    font-size: 1em;
+    /*font-style: italic;*/
+    line-height: 1.4;
+    text-shadow: 1px 1px black;/*#f93407*/
+    text-align: center;
+    text-transform: uppercase;
+    color: #bfbfbf;
+    /*background: -webkit-linear-gradient(#8e880c 55%, silver);*/
+    border:  2px solid #999999;
+    border-top-width: 1px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    margin: auto;
+}
+
+#article1{
+    position: absolute;
+    display: inline-block;
+    width: 44%;
+    height: auto;
+    min-height: 63.5%;
+    margin-top: 4%;
+    margin-left: 11%;
+    overflow: hidden;
+    /*z-index: 3;*/
+}
+
+#img1{
+    -webkit-transition: 1.5s ease;
+    -moz-transition: 1.5s ease;
+    -o-transition: 1.5s ease;
+    -ms-transition: 1.5s ease;
+    position: relative;
+    box-sizing: border-box;
+    object-fit: fill;
+    display: inline-flex;
+    width: 100%;
+    
+    border-radius: 14px;
+    border: 3px solid silver;
+    z-index: 2;
+}
+
+#img1:hover{
+    opacity: 0.65;
+}
+
+#img1:hover + #img1_caption{
+    opacity: 0.85;
+    transition-duration: 1.5s;
+}
+
+#img1_caption{
+    display: inline-flex;
+    object-fit: fill;
+    position: absolute; /*very important value to show caption correctly*/
+    width: 86%;
+    margin-top: -10%;
+    margin-left: 0%;
+    padding-left: 14%;
+    font-size: 170%;
+    font-family: monospace 'Aldhabi';
+    
+    border-top-color: black;
+    border-top-width: 4px;
+    border-bottom-color: black;
+    border-bottom-width: 4px;
+    color: black;
+    background-color: silver;
+    border-radius: 9px;
+    opacity: 0; /*it starts from zero, transition goes on and shows the box*/
+    z-index: 3; /*higher than image z-index*/
+}
+
+#article2{
+    position: absolute;
+    display: inline-block;
+    width: 19.5%;
+    height: auto;/*
+    min-height: 29.75%;
+    max-height: 29.755%;*/
+    margin-top: 4%;
+    margin-left: 56.5%;
+    overflow: hidden;
+    /*z-index: 3;*/
+}
+
+#img2{
+    -webkit-transition: 1.5s ease;
+    -moz-transition: 1.5s ease;
+    -o-transition: 1.5s ease;
+    -ms-transition: 1.5s ease;
+    position: relative;
+    box-sizing: border-box;
+    object-fit: auto;
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 14px;
+    border: 3px solid silver;
+    z-index: 2;
+}
+
+#img2:hover{
+    opacity: 0.58;
+}
+
+#img2:hover + #img2_caption{
+    opacity: 0.85;
+    transition-duration: 1.5s;
+}
+
+#img2_caption{
+    display: inline-flex;
+    object-fit: fill;
+    width: 96%;
+    position: absolute;
+    margin-top: -70%;
+    margin-left: 0%;
+    padding-left: 3%;
+    font-size: 130%;
+    font-family: monospace 'Aldhabi';
+    
+    border-top-color: black;
+    border-top-width: 4px;
+    border-bottom-color: black;
+    border-bottom-width: 4px;
+    border-radius: 9px;
+    color: black;
+    background-color: silver;
+    opacity: 0;
+    z-index: 3;
+}
+
+#article3{
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 19.5%;
+    margin-top: 20.5%;
+    margin-left: 56.5%;
+    background-color: black;
+    overflow: hidden;
+    z-index: 2;
+}
+
+#img3{
+    -webkit-transition: 1.5s ease;
+    -moz-transition: 1.5s ease;
+    -o-transition: 1.5s ease;
+    -ms-transition: 1.5s ease;
+    display: inline-flex;
+    position: relative;
+    box-sizing: border-box;
+    object-fit: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 0%;
+    width: 100%;
+    
+    border-radius: 14px;
+    border: 3px solid silver;
+    z-index: 2;
+}
+
+#img3:hover{
+    opacity: 0.48;
+}
+
+#img3:hover + #img3_caption{
+    opacity: 0.85;
+    transition-duration: 1.5s;
+}
+
+#img3_caption{
+    display: inline-flex;
+    object-fit: fill;
+    position: absolute;
+    width: 30%;
+    /*height: 5%;*/
+    margin-top: -75%;
+    margin-left: 60%;
+    padding-left: 8%;
+    font-size: 130%;
+    font-family: monospace 'Aldhabi';
+    color: black;
+    
+    border-top-color: black;
+    border-top-width: 4px;
+    border-bottom-color: black;
+    border-bottom-width: 4px;
+    background-color: silver;
+    border-radius: 9px;
+    opacity: 0;
+    z-index: 3;
+}
+
+aside{ /*IMPORTANT this element is floating, as the paragraph 'sellingjapan_index'*/
+    display: inline-block;
+    position: absolute;
+    /*float: right;*/
+    
+    margin-top: 4%;
+    margin-left: 78%;
+    padding-right: 0%;
+    width: 14%;
+    
+    
+    font-family: serif 'Times New Roman';
+    font-size: 1.2em;
+    font-weight: lighter;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 3px 3px silver;
+    /*background: -webkit-linear-gradient(black 60%, gray);*/
+    /*z-index: 2;*/
+}
+
+ul{
+    display: inline-block;
+    background: -webkit-linear-gradient(#0d0d0d 50%, /*#262626*/#333333);
+    padding-left: 10px;
+    list-style-type: none;
+}
+
+#down_right{
+    display: inline-block;
+    margin-top: 5%;
+    padding-left: 0;
+    padding-right: 10px;
+    text-align: right;
+    border: 1px solid #333333;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    line-height: 1.4;
+}
+
+ul li:not(:last-child){
+    list-style-type: none;
+    /*margin-bottom: 2%;*/
+    border-bottom: 1px solid gray;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+li:hover{
+    color:white;
+    opacity: 1;
+    text-shadow: 1px 1px 1px gold;
+}
+
+#gift{
+    margin-top: 2%;
+    margin-left: 30%;
+    width: 20%;
+    
+    filter: brightness(0.9);
+    border-radius: 200px;
+}
+
+#offer1{
+    margin-left: 23%;
+    width: 35%;
+    
+    font-size: 1.45em;
+    color: #ffd60a;
+    text-shadow: 2px 2px 4px #47452a, 2px 1px 0 #47452a;
+}
+
+#offer2, #offer3{
+    display: inline-block;
+    position: static;
+    
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1) 80%), url(bamboo_offer.jpg);
+    
+    margin-top: 5%;
+    margin-left: 16%;
+    padding: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+    width: 30%;
+    font-size: 1.3em;
+    color: #ffd60a;
+    
+    box-sizing: border-box;
+    text-align: center;
+    text-shadow: 2px 2px 2px black, 2px 1px 0 black;
+    
+    border: 6px solid black;
+    border-radius: 90px;
+}
+
+#offer3{
+    margin-left: 7%;
+}
+
+#copy, #copy_index{
+    display: block;
+    width: 80%;
+    margin-left: 7.5%;
+    margin-top: 3%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+#copy_index{ /*very IMPORTANT, this margin value determine body height*/
+    /*position: static;*/
+    
+    padding-top: 0px;
+}
+
+#copy_contact{
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 85%;
+}
+
+/*---MEDIA QUERIES IN DESCENDENT RESOLUTION ORDER from 1200px to 350px ---*/
+
+@media (max-width: 1200px){
+        aside{
+            margin-left: 77%;
+        }
+    }
+
+@media(max-width: 1050px){
+        #banner{
+            height: 140px;
+        }
+
+        #img1_caption{
+            font-size: 18px;
+        }
+
+        #img2_caption{
+            font-size: 14px;
+        }
+
+        #wrapper1{
+            height: 225px;
+            width: 425px;
+        }
+
+        #display1, #display2{
+            height: 225px;
+            width: 425px;
+        }
+
+        #previous, #previous2, #next, #next2{
+            font-size: 1.5em;
+            width: 30px;
+
+        }
+
+        #offer2, #offer3{
+            font-size: 1.2em;
+            width: 30%;
+        }
+
+    }
+
+@media(max-width: 900px){ /*Moves the aside block below the paragraph for lower resolutions*/
+        #article1{
+            margin-left: 17%;
+        }
+
+        #article2, #article3{
+            margin-left: 63%;
+        }
+
+        aside{
+            position: static;
+            margin-top: 40%;
+            margin-left: 22%;
+            /*margin-bottom: -225%;*/
+
+            width: 55%;
+        }
+
+        #down_right{
+            margin-top: 1%;
+        }
+
+        ul{
+            display: inline-block;
+            float: right;
+        }
+
+        li{
+            display: inline-block;
+            float: right;
+
+            margin-right: 1%;
+        }
+
+        li a{
+            display: inline-block;
+            float: right;
+            font-size: 0.9em;
+        }
+
+        #sellingjapan_index{
+            position: static;
+            margin-top: 4%;
+            margin-left: 17%;
+        }
+
+        #copy_index{
+            /*position: static;*/
+        }
+    
+        #overwhelmed{
+            margin-top: -14%;
+            margin-left: 20%;
+            width: 60%;
+            font-size: 0.85em;
+        }
+    
+        #offer1{
+            font-size: 0.95em;
+        }
+    }
+
+@media (max-width: 750px){
+        nav a{
+            font-size: 0.75em;
+        }
+
+        .plain-text{
+            font-size: 1em;
+        }
+
+        /*#copy_index{
+            margin-top: 35%;
+        }*/
+    }
+
+@media(max-width: 650px){
+        #banner{
+            height: 85px;
+        }
+
+        #web_intro{
+            font-size: 0.65em;
+            text-shadow: none;
+            font-weight: bolder;
+        }
+
+        #img1_caption{
+            /*font-size: 60%;*/
+        }
+
+        span{
+            font-size: 0.8em;
+        }
+
+        input, textarea{
+            font-size: 0.7em;
+            margin-left: 150px;
+        }
+
+        #offer2, #offer3{
+            margin-left: 27%;
+            font-size: 1em;
+            width: 45%;
+        }
+
+        #gynza_title, #gynza_subtitle{
+            font-size: 1.2em;
+        }
+
+    }
+
+@media(max-width: 550px){
+        #img1_caption{
+            font-size: 12px;
+            padding-left: 0;
+        }
+
+        #img2_caption{
+            font-size: 10px;
+            padding-left: 0;
+        }
+
+        #wrapper1, #display1, #display2{
+            height: 175px;
+            width: 350px;
+        }
+
+        #next, #next2, #previous, #previous2{
+            visibility: hidden;
+        }
+
+        #wrapper1{
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #stamp{
+            width: 100%;
+            margin-left: 0;
+        }
+
+        form{
+            width: 70%;
+            align-content: center;
+        }
+
+        #copy, #copy_contact, #copy_index{
+            font-size: 0.8em;
+        }
+    }
+
+@media(max-width: 350px){
+        #banner{
+            height: 45px;
+        }
+    
+        #overwhelmed{
+            font-size: 0.65em;
+        }
+    }
