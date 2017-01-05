@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+        <meta charset='UTF-8'>
+        <link rel='stylesheet' type='text/css' href='styles_ball.css'>
+	</head>
+
+<body>
+    <header>
+    
+        <p id='screen'></p>
+        <p id='screen2'></p>
+        <p id='screen3'></p><br>
+        <div class='pannel'>
+            <input type='button' value='50 FPS' id='fiftyFps'>
+        <input type='button' value='25 FPS' id='twentyfiveFps'>
+            <input type='button' value='<' id='arrowLeft'>
+            <input type='button' value='>' id='arrowRight'>
+        <input type='button' value='x2' id='speedIntervalsupra'>
+        <input type='button' value='+' id='speedIntervalplus'>
+        <input type='button' value='-' id='speedIntervalminus'>
+        <input type='button' value='/2' id='speedIntervalinfra'>
+        
+    </div>
+    <canvas id='playzone' width='1000px' height='550px'></canvas>
+        
+    </header>
+    
+     <footer id='about'>
+     
+         <!--<p>Images used on this site are labelled by Google as appropiate for non-commercial purposes. Kanji characters by bexika -deviantart.com- and Mt. Fuji landscape by Moyan Brenn -flickr.com-. This website and its written content is copyright of Adrian Guerra - © Nihon Travels 2016. All rights reserved. </p>-->
+    </footer>
+    
+<script>
+    
+    var playzone=document.getElementById('playzone');
+    var square=playzone.getContext('2d');
+    square.font='60px Impact';
+    square.fillText('LEVEL 1',282,300);
+    var currentLevel=1;
+    setTimeout(drawMap1,1000);
+    
+    function drawMap1(){ //the only level drawn by just one function
+        square.clearRect(218,200,300,150); //clears level title
+        columnXcoord=[488];
+        columnYcoord=[0];
+        columnWidth=30;
+        columnLength=450;
+    square.font='25px Impact';
+    square.fillText('GOAL',940,30);
+    square.fillRect(columnXcoord[0],columnYcoord[0],columnWidth,columnLength);
+    }
+    
+    function drawMap2a(){
+        square.clearRect(0,0,1000,550);
+        square.font='60px Impact';
+        square.fillText('LEVEL 2',282,300);
+            currentLevel=2;
+        x=90;
+        y=0;
+        step=5;
+        setTimeout(drawMap2b, 1000);
+    }
+    
+    function drawMap2b(){
+    square.clearRect(218,200,300,150); //clears level title
+        columnXcoord=[345,632];
+        columnYcoord=[0,0];
+        columnWidth=30;
+        columnLength=450;
+    square.font='25px Impact';
+    square.fillText('GOAL',940,30);
+    square.fillRect(columnXcoord[0],columnYcoord[0],30,450);
+    square.fillRect(columnXcoord[1],columnYcoord[1],30,450);
+    }
+    
+    function drawMap3a(){ //initiating level 3 and giving coords for opacity
+        square.clearRect(0,0,1000,550);
+        columnXcoord=[254,452,652];
+        columnYcoord=[0,0,0];
+        columnWidth=30;
+        columnLength=450;
+        
+        needleXcoord=[288,328,368,408,448];
+        needleXcoordEnd=[];
+        needleVertexXcoord=[308,348,388,428];
+        needleVertexYcoord=30;
+        
+        square.font='60px Impact';
+        square.fillStyle='#000000';
+    square.fillText('LEVEL 3',282,300);
+        x=90;
+        y=0;
+        step=5;
+        currentLevel=3;
+        injured=false;
+        setTimeout(drawMap3b, 1000);
+        
+    }
+    
+    function drawMap3b(){ //actually drawing level 3
+        square.clearRect(218,200,300,150); // delets the level title with a wider square
+        square.fillRect(columnXcoord[0],columnYcoord[0],30,450);
+    square.fillRect(columnXcoord[1],columnYcoord[1],30,450);
+        square.fillRect(columnXcoord[2],columnYcoord[2],30,450);
+        
+        square.font='25px Impact';
+    square.fillText('GOAL',940,30);
+        
+        square.moveTo(needleXcoord[0],0);
+        square.lineTo(needleVertexXcoord[0],needleVertexYcoord);
+        square.lineTo(needleXcoord[1],0);
+        square.lineTo(needleVertexXcoord[1],needleVertexYcoord);
+        square.lineTo(needleXcoord[2],0);
+        square.lineTo(needleVertexXcoord[2],needleVertexYcoord);
+        square.lineTo(needleXcoord[3],0);
+        square.lineTo(needleVertexXcoord[3],needleVertexYcoord);
+        square.lineTo(needleXcoord[4],0);
+        square.stroke();
+    }
+    
+        var y=0;
+        var x=90;
+        var directionY='down';
+        var directionX='';
+        var roof=20;
+        var floor=540;
+        var counter=0;
+        var radius=20;
+        var ballColor='';
+        var speedInterval=40;
+        var step=5;
+    var diameter=(radius*2);
+    var kick=18; //pixels moved either left or right
+    var counter=0;
+    var wallRight=990;
+    var wallLeft=10;
+    var injured=false; //ball can resist 1 hit
+    
+    //all listeners for buttons on playing pannel
+    
+    var input=document.getElementById('speedIntervalplus');
+    input.addEventListener('click', rollQuicker, true);
+            //var inputValue=document.getElementById('speedInterval').value;
+    var input=document.getElementById('twentyfiveFps');
+    input.addEventListener('click', select25, false);
+    
+    var input=document.getElementById('fiftyFps');
+    input.addEventListener('click', select50, false);
+    
+            var input=document.getElementById('speedIntervalminus');
+    input.addEventListener('click', rollSlower, true);
+            
+            var input=document.getElementById('speedIntervalsupra');
+    input.addEventListener('click', rollQuickest, true);
+            
+            var input=document.getElementById('speedIntervalinfra');
+    input.addEventListener('click', rollSlowest, true);
+            
+            var input=document.getElementById('arrowRight');
+    input.addEventListener('click', rollRight, false);
+    
+            var input=document.getElementById('arrowLeft');
+    input.addEventListener('click', rollLeft, false);
+    
+            function select25(){ //25 FPS
+                speedInterval=40;
+            }
+    
+            function select50(){ //50 FPS
+                speedInterval=20;
+            }
+    
+    
+    function start(){
+        square.beginPath();
+        square.arc(x,y,radius,0,Math.PI*2,false);
+        square.fill();
+        setInterval(motion, speedInterval);
+    }
+    
+    window.addEventListener('load', start, false);
+    
+            function rollQuicker(){
+                step=7;
+            }
+            
+            function rollSlower(){
+                step=3;
+            }
+            
+            function rollQuickest(){
+                step=12;
+            }
+            
+            function rollSlowest(){
+                step=1;
+            }
+            
+            function rollRight(){
+                square.clearRect(x-radius,y-radius,diameter,diameter); // erases last ball frame
+                x=x+kick; //increment to X coord when right arrow is pressed
+                if(x>wallRight || y<columnLength+20 && x>columnXcoord[0]-5 && x<columnXcoord[0]+columnWidth || y<columnLength+20 && x>columnXcoord[1]-5 && x<columnXcoord[1]+columnWidth || y<columnLength+20 && x>columnXcoord[2]-5 && x<columnXcoord[2]+columnWidth){
+                    //second conditional part regarding finding a wall on ball's right
+                    x=x-kick; //"if there is a wall, stay in your place"
+                }else{ //code for standard right movement
+                square.beginPath();
+            square.arc(x,y,radius,0,Math.PI*2,false);
+            square.fill();
+                }
+            }
+    
+            function rollLeft(){
+            square.clearRect(x-radius,y-radius,diameter,diameter);
+                x=x-kick;
+                if(x<wallLeft || y<columnLength+20 && x<columnXcoord[0]+columnWidth+5 && x>columnXcoord[0]+5 || y<columnLength+20 && x>columnXcoord[1]-9 && x<columnXcoord[1]+columnWidth+radius || y<columnLength+20 && x>columnXcoord[2]-9 && x<columnXcoord[2]+columnWidth+radius){
+                    x=x+kick;
+                }else{
+            square.beginPath();
+            square.arc(x,y,radius,0,Math.PI*2,false);
+            square.fill();
+            }
+            }
+    
+            function switchYdown(){ //it switches directions
+                directionY='down';
+            }
+    
+            function switchYup(){
+                directionY='up';
+            }
+    
+            function endLevel(){
+                    //step=1;
+                square.clearRect(0,0,1000,550);
+                square.font='95px Impact';
+                square.fillStyle='#000000';
+                
+                if(currentLevel===1){
+                square.fillText('NICE KIDDO',200,200);
+                setTimeout(finishText, 2500);
+                }
+                
+                if(currentLevel===2){
+                square.fillText('WELL DONE BOSS',190,200);
+                setTimeout(finishText, 2500);
+                }
+                
+                if(currentLevel===3){
+                square.fillText('THAT WAS SKILLFUL',175,200);
+                setTimeout(finishText, 2500);
+                }
+            }
+    
+            function finishText(){ //gives a subtitle and calls next level
+                square.clearRect(0,0,950,550); //erases everything but ball, it looks smoother
+                square.font='65px Impact';
+                
+                if(currentLevel===1){
+                    square.fillText('But dont look so confident',100,200);
+                    setTimeout(drawMap2a, 4000);
+                }
+                
+                if(currentLevel===2){ /*calls level 3*/
+                square.fillText('Lets get to next challenge',100,200);
+                square.fillText('this time it will hurt',140,275);
+                setTimeout(drawMap3a, 4000);
+                }
+                
+                if(currentLevel===3){
+                    square.fillText('You cleared first 3 levels',100,150);
+                    square.fillText('Developers getting some rest', 140,225);
+                    square.fillText('new levels will come soon.', 180,300);
+                    square.fillText('Thanks for playing bro', 100,450);
+                }
+            }
+    
+    
+    function motion(){ //main function; up and down animations
+    
+        if(y<floor && directionY==='down'){
+            square.clearRect(x-radius,y-radius,diameter,diameter);
+                y+=step;
+            square.beginPath();
+            square.arc(x,y,radius,0,Math.PI*2,false);
+            square.fill();
+                document.getElementById("screen").innerHTML='Y axis: '+y;
+                document.getElementById("screen2").innerHTML='X axis: '+x;
+                document.getElementById("screen3").innerHTML='FPS: '+Math.round(1000/speedInterval);
+            }
+            
+            
+            
+            
+            /*var randomX=Math.round(Math.random*10);
+            var run=false;
+            if(randomX>5 && run===false){
+                x+=randomX;
+                run=true;
+            }else{
+                x-=randomX;
+                run=true;
+            }*/
+    
+    //---end of falling animation
+        
+        if(y>floor-5 && directionY==='down'){
+            switchYup();
+        }
+        
+        if(x>288 && x<448 && y<60 && y>30 && currentLevel===3){
+            step=1;
+            
+            if(y<43 && y>37 && injured===false){ //ball gets 1 hit of damage
+                injured=true;
+                step=2;
+                square.fillStyle='#cc0000';
+                switchYdown();
+            }else if(y<43 && y>37 && injured===true){ //ball gets second hit, level re-initiated
+                drawMap3a();
+            }
+        }
+        
+    
+    if(y<floor+40 && directionY==='up'){
+        
+        if(x>925 && x<1000 && y<40 && y>20){ //slows ball down, to trigger next condition
+            step=1;
+
+            if(y<30 && y>28){ //clears level
+            endLevel();
+            }
+        }
+    
+        
+        if(y>columnLength && y<columnLength+24 && x>columnXcoord[0]-5 && x<columnXcoord[0]+columnWidth+5 || y>columnLength && y<columnLength+24 && x>columnXcoord[1]-5 && x<columnXcoord[1]+columnWidth+5 || y>columnLength && y<columnLength+24 && x>columnXcoord[2]-5 && x<columnXcoord[2]+columnWidth+5){
+            switchYdown(); //it found a column top
+        }
+            square.clearRect(x-radius,y-radius,diameter,diameter);
+                y-=step;
+            square.beginPath();
+            square.arc(x,y,radius,0,Math.PI*2,false);
+            square.fill();
+                document.getElementById("screen").innerHTML='Y axis: '+y;
+                document.getElementById("screen2").innerHTML='X axis: '+x;
+                document.getElementById("screen3").innerHTML='FPS: '+Math.round(1000/speedInterval);
+        
+    }
+    //---end of ascendent animation
+        
+        if(y<roof && directionY==='up'){
+            switchYdown();
+            //y=0; //-15px after the roof, smoothing change of direction
+        }
+        
+    //-//-//-//-//-// END OF LEVEL 1
+    }
+</script>
+
+	</body>
+
+</html>

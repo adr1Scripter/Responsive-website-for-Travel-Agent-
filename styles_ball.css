@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    display: inline-block;
+}
+
+p{
+    float: left;
+    margin-left: 3%;
+}
+
+canvas{
+    margin-top: 20px;
+    margin-left: 280px;
+    border: 3px solid purple;
+    border-radius: 45px;
+    box-shadow: 4px 4px 12px black;
+}
+
+p{
+    font-family: 'Tahoma';
+    font-size: 2em;
+}
+
+#fiftyFps{
+    width: 100px;
+}
+
+#twentyfiveFps{
+    margin-right: 430px;
+    width: 100px;
+}
+
+.pannel{
+    display: inline-block;
+    margin-top: 45px;
+    margin-left: 300px;
+}
+
+input{
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.75em;
+    width: 50px;
+    border-radius: 18px;
+    box-shadow: 3px 3px 5px black;
+}
